@@ -23,14 +23,14 @@ function getComputerChoice(){
     }//else
     return str;
 }//getComputerChoice
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
 //returns capitalized version of user input
 function getHumanChoice(){
     let str = prompt("Enter rock, paper, or scissors:");
     str = str.toUpperCase();
     return str;
 }//getHumanChoice
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
 let humanScore = 0;
 let computerScore = 0;
 /*PSEUDOCODE
@@ -56,3 +56,38 @@ playRound function w/ params humanChoice, computerChoice
     else
         return tie
 */
+function playRound(humanChoice, computerChoice){
+    if(humanChoice==="ROCK" && computerChoice==="PAPER"){
+        computerScore++;
+        return "Computer won";
+    }
+    else if(humanChoice==="ROCK" && computerChoice==="SCISSORS"){
+        humanScore++;
+        return "Player won";
+    }
+    else if(humanChoice==="PAPER" && computerChoice==="SCISSORS"){
+        computerScore++;
+        return "Computer won";
+    }
+    else if(humanChoice==="PAPER" && computerChoice==="ROCK"){
+        humanScore++;
+        return "Player won";
+    }
+    else if(humanChoice==="SCISSORS" && computerChoice==="ROCK"){
+        computerScore++;
+        return "Computer won";
+    }
+    else if(humanChoice==="SCISSORS" && computerChoice==="PAPER"){
+        humanScore++;
+        return "Player won";
+    }
+    else if(humanChoice===computerChoice){
+        return "Tie";
+    }
+    else{
+        return "Invalid input"
+    }
+}
+console.log(playRound(getHumanChoice(), getComputerChoice()));
+console.log(humanScore);
+console.log(computerScore);
