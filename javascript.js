@@ -9,6 +9,15 @@ for(let i = 0; i < 5; i++){
     console.log("Your score: " + humanScore);
     console.log("Computer score: " + computerScore);
 }//for
+if(humanScore > computerScore){
+    console.log("You won overall!");
+}//if
+else if(computerScore>humanScore){
+    console.log("You lost overall!");
+}//else if
+else{
+    console.log("You tied overall!");
+}//else
 //randomly returns string of ROCK, PAPER, or SCISSORS
 function getComputerChoice(){
     let ranNum = Math.floor(Math.random() * 3) + 1;
