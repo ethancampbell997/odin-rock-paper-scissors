@@ -1,3 +1,14 @@
+//score of human and computer
+let humanScore = 0;
+let computerScore = 0;
+//runs the program 5 times
+for(let i = 0; i < 5; i++){
+    //plays the game once
+    console.log(playRound(getHumanChoice(), getComputerChoice()));
+    //prints out the scores
+    console.log("Your score: " + humanScore);
+    console.log("Computer score: " + computerScore);
+}//for
 //randomly returns string of ROCK, PAPER, or SCISSORS
 function getComputerChoice(){
     let ranNum = Math.floor(Math.random() * 3) + 1;
@@ -19,8 +30,6 @@ function getHumanChoice(){
     str = str.toUpperCase();
     return str;
 }//getHumanChoice
-let humanScore = 0;
-let computerScore = 0;
 //compares the human input to the random computer input
 function playRound(humanChoice, computerChoice){
     if(humanChoice==="ROCK" && computerChoice==="PAPER"){
@@ -54,8 +63,3 @@ function playRound(humanChoice, computerChoice){
         return "Invalid input.";
     }//else
 }//playRound
-for(let i = 0; i < 5; i++){
-    console.log(playRound(getHumanChoice(), getComputerChoice()));
-    console.log(humanScore);
-    console.log(computerScore);
-}
