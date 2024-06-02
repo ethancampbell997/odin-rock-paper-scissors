@@ -1,13 +1,3 @@
-/*PSEUDOCODE 
-getComputerChoice function
-    random number 1-3
-    assign 1 to "ROCK," 2 to "PAPER," and 3 to "SCISSORS"
-    return the string
-getHumanChoice function
-    prompt the user for input (rock, paper, or scissors)
-    set the string to all caps
-    return the string
-*/
 //randomly returns string of ROCK, PAPER, or SCISSORS
 function getComputerChoice(){
     let ranNum = Math.floor(Math.random() * 3) + 1;
@@ -23,71 +13,47 @@ function getComputerChoice(){
     }//else
     return str;
 }//getComputerChoice
-//console.log(getComputerChoice());
 //returns capitalized version of user input
 function getHumanChoice(){
     let str = prompt("Enter rock, paper, or scissors:");
     str = str.toUpperCase();
     return str;
 }//getHumanChoice
-//console.log(getHumanChoice());
 let humanScore = 0;
 let computerScore = 0;
-/*PSEUDOCODE
-playRound function w/ params humanChoice, computerChoice
-    if humanChoice is rock and computer choice is paper
-        increment computerScore
-        return computer won
-    else if humanChoice is rock and computer choice is scissors
-        increment humanScore
-        return player won
-    else if humanChoice is paper and computer choice is scissors
-        increment computerScore
-        return computer won
-    else if humanChoice is paper and computer choice is rock
-        increment humanScore
-        return player won
-    else if humanChoice is scissors and computer choice is rock
-        increment computerScore
-        return computer won
-    else if humanChoice is scissors and computer choice is paper
-        increment humanScore
-        return player won
-    else
-        return tie
-*/
+//compares the human input to the random computer input
 function playRound(humanChoice, computerChoice){
     if(humanChoice==="ROCK" && computerChoice==="PAPER"){
         computerScore++;
         return "Computer won";
-    }
+    }//if
     else if(humanChoice==="ROCK" && computerChoice==="SCISSORS"){
         humanScore++;
         return "Player won";
-    }
+    }//else if
     else if(humanChoice==="PAPER" && computerChoice==="SCISSORS"){
         computerScore++;
         return "Computer won";
-    }
+    }//else if
     else if(humanChoice==="PAPER" && computerChoice==="ROCK"){
         humanScore++;
         return "Player won";
-    }
+    }//else if
     else if(humanChoice==="SCISSORS" && computerChoice==="ROCK"){
         computerScore++;
         return "Computer won";
-    }
+    }//else if
     else if(humanChoice==="SCISSORS" && computerChoice==="PAPER"){
         humanScore++;
         return "Player won";
-    }
+    }//else if
     else if(humanChoice===computerChoice){
         return "Tie";
-    }
+    }//else if
     else{
         return "Invalid input"
-    }
-}
+    }//else
+}//playRound
 console.log(playRound(getHumanChoice(), getComputerChoice()));
 console.log(humanScore);
 console.log(computerScore);
