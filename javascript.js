@@ -25,35 +25,37 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice){
     if(humanChoice==="ROCK" && computerChoice==="PAPER"){
         computerScore++;
-        return "Computer won";
+        return "You lose! Paper beats rock!";
     }//if
     else if(humanChoice==="ROCK" && computerChoice==="SCISSORS"){
         humanScore++;
-        return "Player won";
+        return "You win! Rock beats scissors!";
     }//else if
     else if(humanChoice==="PAPER" && computerChoice==="SCISSORS"){
         computerScore++;
-        return "Computer won";
+        return "You lose! Scissors beats paper!";
     }//else if
     else if(humanChoice==="PAPER" && computerChoice==="ROCK"){
         humanScore++;
-        return "Player won";
+        return "You win! Paper beats rock!";
     }//else if
     else if(humanChoice==="SCISSORS" && computerChoice==="ROCK"){
         computerScore++;
-        return "Computer won";
+        return "You lose! Rock beats scissors!";
     }//else if
     else if(humanChoice==="SCISSORS" && computerChoice==="PAPER"){
         humanScore++;
-        return "Player won";
+        return "You win! Scissors beats paper!";
     }//else if
     else if(humanChoice===computerChoice){
-        return "Tie";
+        return "It's a tie!";
     }//else if
     else{
-        return "Invalid input"
+        return "Invalid input.";
     }//else
 }//playRound
-console.log(playRound(getHumanChoice(), getComputerChoice()));
-console.log(humanScore);
-console.log(computerScore);
+for(let i = 0; i < 5; i++){
+    console.log(playRound(getHumanChoice(), getComputerChoice()));
+    console.log(humanScore);
+    console.log(computerScore);
+}
