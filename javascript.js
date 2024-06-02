@@ -31,3 +31,28 @@ function getHumanChoice(){
     return str;
 }//getHumanChoice
 console.log(getHumanChoice());
+let humanScore = 0;
+let computerScore = 0;
+/*PSEUDOCODE
+playRound function w/ params humanChoice, computerChoice
+    if humanChoice is rock and computer choice is paper
+        increment computerScore
+        return computer won
+    else if humanChoice is rock and computer choice is scissors
+        increment humanScore
+        return player won
+    else if humanChoice is paper and computer choice is scissors
+        increment computerScore
+        return computer won
+    else if humanChoice is paper and computer choice is rock
+        increment humanScore
+        return player won
+    else if humanChoice is scissors and computer choice is rock
+        increment computerScore
+        return computer won
+    else if humanChoice is scissors and computer choice is paper
+        increment humanScore
+        return player won
+    else
+        return tie
+*/
