@@ -64,11 +64,20 @@ function playRound(humanChoice, computerChoice){
     else{
         return "Invalid input.";
     }//else
-
 }//playRound
-const btn1 = document.querySelector("#btn1");
-btn1.addEventListener("click", () => {
-    playRound("ROCK", getComputerChoice()); 
-    console.log("Your score: " + humanScore);
-    console.log("Computer score: " + computerScore);
-});
+const btns = document.querySelectorAll("button");
+btns.forEach((button) => {
+    button.addEventListener("click", () => {
+        if(button.id == "btn1"){
+          playRound("ROCK", getComputerChoice());  
+        }
+        else if(button.id == "btn2"){
+            playRound("PAPER", getComputerChoice()); 
+        }
+        else if(button.id == "btn3"){
+            playRound("SCISSORS", getComputerChoice()); 
+        }
+        console.log("Your score: " + humanScore);
+        console.log("Computer score: " + computerScore);
+    });
+})
