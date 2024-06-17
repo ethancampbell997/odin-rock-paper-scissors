@@ -2,14 +2,13 @@
 let humanScore = 0;
 let computerScore = 0;
 //runs the program 5 times
-for(let i = 0; i < 5; i++){
+//for(let i = 0; i < 5; i++){
     //plays the game once
-    console.log(playRound(getHumanChoice(), getComputerChoice()));
+    //console.log(playRound(getHumanChoice(), getComputerChoice()));
     //prints out the scores
-    console.log("Your score: " + humanScore);
-    console.log("Computer score: " + computerScore);
-}//for
-if(humanScore > computerScore){
+
+//}//for
+/*if(humanScore > computerScore){
     console.log("You won overall!");
 }//if
 else if(computerScore>humanScore){
@@ -17,7 +16,7 @@ else if(computerScore>humanScore){
 }//else if
 else{
     console.log("You tied overall!");
-}//else
+}//else*/
 //randomly returns string of ROCK, PAPER, or SCISSORS
 function getComputerChoice(){
     let ranNum = Math.floor(Math.random() * 3) + 1;
@@ -33,12 +32,6 @@ function getComputerChoice(){
     }//else
     return str;
 }//getComputerChoice
-//returns capitalized version of user input
-function getHumanChoice(){
-    let str = prompt("Enter rock, paper, or scissors:");
-    str = str.toUpperCase();
-    return str;
-}//getHumanChoice
 //compares the human input to the random computer input
 function playRound(humanChoice, computerChoice){
     if(humanChoice==="ROCK" && computerChoice==="PAPER"){
@@ -71,4 +64,11 @@ function playRound(humanChoice, computerChoice){
     else{
         return "Invalid input.";
     }//else
+
 }//playRound
+const btn1 = document.querySelector("#btn1");
+btn1.addEventListener("click", () => {
+    playRound("ROCK", getComputerChoice()); 
+    console.log("Your score: " + humanScore);
+    console.log("Computer score: " + computerScore);
+});
