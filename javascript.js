@@ -65,19 +65,22 @@ function playRound(humanChoice, computerChoice){
         return "Invalid input.";
     }//else
 }//playRound
+const hs = document.querySelector("#hs");
+const cs = document.querySelector("#cs");
+const result = document.querySelector("#result");
 const btns = document.querySelectorAll("button");
 btns.forEach((button) => {
     button.addEventListener("click", () => {
         if(button.id == "btn1"){
-          playRound("ROCK", getComputerChoice());  
+          result.textContent = playRound("ROCK", getComputerChoice());  
         }
         else if(button.id == "btn2"){
-            playRound("PAPER", getComputerChoice()); 
+            result.textContent = playRound("PAPER", getComputerChoice()); 
         }
         else if(button.id == "btn3"){
-            playRound("SCISSORS", getComputerChoice()); 
+            result.textContent = playRound("SCISSORS", getComputerChoice()); 
         }
-        console.log("Your score: " + humanScore);
-        console.log("Computer score: " + computerScore);
+        hs.textContent = "Your Score: " + humanScore;
+        cs.textContent = "Computer Score: " + computerScore;
     });
 })
