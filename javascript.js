@@ -52,7 +52,7 @@ function playRound(humanChoice, computerChoice){
 const hs = document.querySelector("#hs");
 const cs = document.querySelector("#cs");
 const result = document.querySelector("#result");
-const body = document.querySelector("body");
+const winner = document.querySelector("#winner");
 const btns = document.querySelectorAll("button");
 btns.forEach((button) => {
     button.addEventListener("click", () => {
@@ -68,7 +68,6 @@ btns.forEach((button) => {
         hs.textContent = "Your Score: " + humanScore;
         cs.textContent = "Computer Score: " + computerScore;
         if(humanScore >= 5|| computerScore >= 5){
-            const winner = document.createElement("h3");
             if(humanScore > computerScore){ 
                 winner.textContent = "You won overall!"
             }//if
@@ -78,7 +77,6 @@ btns.forEach((button) => {
             else{
                 winner.textContent = "You tied overall!"
             }//else
-            body.appendChild(winner);
         }//if
     });
 })
