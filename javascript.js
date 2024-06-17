@@ -1,22 +1,6 @@
 //score of human and computer
 let humanScore = 0;
 let computerScore = 0;
-//runs the program 5 times
-//for(let i = 0; i < 5; i++){
-    //plays the game once
-    //console.log(playRound(getHumanChoice(), getComputerChoice()));
-    //prints out the scores
-
-//}//for
-/*if(humanScore > computerScore){
-    console.log("You won overall!");
-}//if
-else if(computerScore>humanScore){
-    console.log("You lost overall!");
-}//else if
-else{
-    console.log("You tied overall!");
-}//else*/
 //randomly returns string of ROCK, PAPER, or SCISSORS
 function getComputerChoice(){
     let ranNum = Math.floor(Math.random() * 3) + 1;
@@ -74,13 +58,13 @@ btns.forEach((button) => {
     button.addEventListener("click", () => {
         if(button.id == "btn1"){
           result.textContent = playRound("ROCK", getComputerChoice());  
-        }
+        }//if
         else if(button.id == "btn2"){
             result.textContent = playRound("PAPER", getComputerChoice()); 
-        }
+        }//else if
         else if(button.id == "btn3"){
             result.textContent = playRound("SCISSORS", getComputerChoice()); 
-        }
+        }//else if
         hs.textContent = "Your Score: " + humanScore;
         cs.textContent = "Computer Score: " + computerScore;
         if(humanScore >= 5|| computerScore >= 5){
@@ -95,6 +79,6 @@ btns.forEach((button) => {
                 winner.textContent = "You tied overall!"
             }//else
             body.appendChild(winner);
-        }
+        }//if
     });
 })
